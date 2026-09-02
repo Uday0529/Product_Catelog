@@ -2,6 +2,7 @@ const express = require("express");
 const validateProduct = require("../middleware/validateProduct");
 const authenticate = require("../middleware/auth");
 
+const router = express.Router();
 
 const {
     createProduct,
@@ -12,7 +13,6 @@ const {
     getProductStats
 } = require("../controllers/productController");
 
-const router = express.Router();
 
 router.post("/", authenticate, validateProduct, createProduct);
 
